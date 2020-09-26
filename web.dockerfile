@@ -1,12 +1,18 @@
-FROM php:7.4-apache
+FROM php:7.3-apache-buster
 
 RUN apt-get update && apt-get install -y --fix-missing \
-    apt-utils \
-    gnupg
+  apt-utils \
+  gnupg
 
-RUN apt-get update && apt-get install -y \
-    zlib1g-dev \
-    libzip-dev \
-    libpng-dev
+RUN apt-get update && apt-get install -y --no-install-recommends \
+  zlib1g-dev \
+  libzip-dev \
+  libpng-dev
 
-RUN docker-php-ext-install gd pdo pdo_mysql
+RUN a2enmod rewrite
+
+RUN docker-php-ext-install \
+  gd \ 
+  opcache \ 
+  pdo_mysql \
+  zip
