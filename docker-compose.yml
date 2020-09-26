@@ -1,1 +1,21 @@
-# TODO: Implement Docker Containers
+version: '3'
+services:
+  web:
+    build:
+      context: ./
+      dockerfile: web.dockerfile
+    volumes:
+      - ./src:/var/www/html:cached
+    ports:
+      - "80:80"
+  db:
+    image: mariadb
+    volumes:
+      - ./db-backups:/var/mysql/backups:delegated
+    environment:
+      MYSQL_DATABASE: drupaldb
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: drupal
+      MYSQL_PASSWORD: guest 
+    ports:
+      - "3306:3306"
