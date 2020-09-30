@@ -1,0 +1,7 @@
+first_module.welcome:
+  path: '/status'
+  defaults:
+    _controller: '\Drupal\status_module\Controller\StatusController::content'
+    _title: 'Task Status'
+  requirements:
+    _permission: 'access content'

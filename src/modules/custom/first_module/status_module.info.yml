@@ -1,0 +1,6 @@
+name: Task Status
+type: module
+description: 'Task Status Module'
+package: Custom
+version: 1.0
+core: 8.x
