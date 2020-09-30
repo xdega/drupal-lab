@@ -1,0 +1,7 @@
+first_module.welcome:
+  path: '/welcome/page'
+  defaults:
+    _controller: '\Drupal\first_module\Controller\WelcomeController::welcome'
+    _title: 'Welcome to my first custom module'
+  requirements:
+    _permission: 'access content'
