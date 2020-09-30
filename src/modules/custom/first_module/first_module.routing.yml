@@ -2,6 +2,6 @@ first_module.welcome:
   path: '/welcome/page'
   defaults:
     _controller: '\Drupal\first_module\Controller\WelcomeController::welcome'
-    _title: 'Welcome to my first custom module'
+    _title: 'Schedule Helper'
   requirements:
     _permission: 'access content'

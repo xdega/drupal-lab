@@ -6,7 +6,7 @@ class WelcomeController {
 
   public function welcome() {
     return [
-      '#markup' => 'ALRIGHT MATE?!'
+      '#markup' => 'Schedule Form/Table Here'
     ];
   }
 }
