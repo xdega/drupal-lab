@@ -1,7 +1,14 @@
 status_module.main:
-  path: '/status'
+  path: 'task/status'
   defaults:
     _controller: '\Drupal\status_module\Controller\StatusController::content'
     _title: 'Task Status'
+  requirements:
+    _permission: 'access content'
+form_api_example.simple_form:
+  path: 'task/new'
+  defaults:
+    _form: '\Drupal\status_module\Form\TaskForm'
+    _title: 'Add Task'
   requirements:
     _permission: 'access content'
