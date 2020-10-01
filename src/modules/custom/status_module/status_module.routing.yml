@@ -1,4 +1,4 @@
-first_module.welcome:
+status_module.main:
   path: '/status'
   defaults:
     _controller: '\Drupal\status_module\Controller\StatusController::content'
