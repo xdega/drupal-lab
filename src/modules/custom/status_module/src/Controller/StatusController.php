@@ -10,11 +10,7 @@ class StatusController extends ControllerBase
   {
 
     $intro = 'Welcome to the Task Status Monitor';
-
-    $header = [
-      'Task',
-      'Complete?'
-    ];
+    $header = ['Task', 'Complete?'];
 
     $rows = [
       [$this->t('Cook Breakfast'), 'X'],
@@ -27,7 +23,9 @@ class StatusController extends ControllerBase
       '#markup' => '<p>' . $this->t($intro) . '</p>',
     ];
 
-    $build['schedule_table'] = [
+    $build['form'] = \Drupal::formBuilder()->getForm('Drupal\status_module\Form\TaskForm');
+
+    $build['table'] = [
       '#type' => 'table',
       '#header' => $header,
       '#rows' => $rows,

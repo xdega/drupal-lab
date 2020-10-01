@@ -4,6 +4,7 @@ namespace Drupal\status_module\Form;
 
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Routing\RouteMatchInterface;
 
 class TaskForm extends FormBase
 {
@@ -14,11 +15,6 @@ class TaskForm extends FormBase
 
   public function buildForm(array $form, FormStateInterface $form_state)
   {
-    $form['description'] = [
-      '#type' => 'item',
-      '#markup' => $this->t('A form for adding new tasks')
-    ];
-
     $form['task'] = [
       '#type' => 'textfield',
       '#title' => $this->t('Task Name'),
