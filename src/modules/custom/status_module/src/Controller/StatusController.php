@@ -3,21 +3,40 @@
 namespace Drupal\status_module\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
+use Drupal\Core\Database\Connection;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 class StatusController extends ControllerBase
 {
+  protected $database;
+
+  public function __construct(Connection $database)
+  {
+    $this->database = $database;
+  }
+
+  public static function create(ContainerInterface $container)
+  {
+    return new static(
+      $container->get('database'),
+    );
+  }
+
   public function content()
   {
-
     $intro = 'Welcome to the Task Status Monitor';
-    $header = ['Task', 'Complete?'];
+    $header = ['Task', 'Completion Status'];
 
-    $rows = [
-      [$this->t('Cook Breakfast'), 'X'],
-      [$this->t('Wash Dishes'), 'X'],
-      [$this->t('Get Groceries'), ''],
-      [$this->t('Study Some Drupal'), ''],
-    ];
+    $query = $this->database->select('status_module_task', 't')
+      ->fields('t', ['body', 'complete']);
+
+    $result = $query->execute();
+
+    $rows = [];
+    foreach ($result as $row) {
+      //$complete = (bool)$row['complete'] ? 'Complete' : 'Not Complete';
+      $rows[] = ['data' => (array) $row];
+    }
 
     $build['introduction'] = [
       '#markup' => '<p>' . $this->t($intro) . '</p>',
