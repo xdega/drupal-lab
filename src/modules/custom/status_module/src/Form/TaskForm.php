@@ -48,6 +48,15 @@ class TaskForm extends FormBase
   {
     $props['%task'] = $form_state->getValue('task');
 
+    $db_connection = \Drupal::database();
+
+    if ($db_connection->schema()->tableExists('status_module_task')) {
+      $db_connection->insert('status_module_task')
+        ->fields(['body' => $props['%task']])
+        ->execute();
+    }
+
     $this->messenger()->addMessage($this->t('New Task Added! %task', $props));
+
   }
 }
