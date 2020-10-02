@@ -27,15 +27,15 @@ class StatusController extends ControllerBase
     $intro = 'Welcome to the Task Status Monitor';
     $header = ['Task', 'Completion Status'];
 
-    $query = $this->database->select('status_module_task', 't')
-      ->fields('t', ['body', 'complete']);
-
-    $result = $query->execute();
+    $result = $this->database->select('status_module_task', 't')
+      ->fields('t', ['body', 'complete'])
+      ->execute();
 
     $rows = [];
     foreach ($result as $row) {
-      //$complete = (bool)$row['complete'] ? 'Complete' : 'Not Complete';
-      $rows[] = ['data' => (array) $row];
+      $complete = (bool)$row->complete ? 'Complete' : 'Not Complete';
+
+      $rows[] = [$row->body, $complete];
     }
 
     $build['introduction'] = [
