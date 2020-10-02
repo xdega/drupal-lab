@@ -1,0 +1,54 @@
+<?php
+
+function status_module_install()
+{
+  // This is test data that should be removed before any release
+  $rows = [
+    ['body' => 'Example Task (complete)', 'complete' => 1],
+    ['body' => 'Example Task (not complete, default)'],
+  ];
+
+  $db_connection = \Drupal::database();
+
+  if ($db_connection->schema()->tableExists('status_module_task')) {
+    foreach ($rows as $row) {
+      $db_connection->insert('status_module_task')->fields($row)->execute();
+    }
+  }
+}
+
+function status_module_uninstall()
+{
+  $db_connection = \Drupal::database();
+  $db_connection->schema()->dropTable('status_module_task');
+}
+
+function status_module_schema()
+{
+  $schema['status_module_task'] = [
+    'description' => 'Stores tasks and their status.',
+    'fields' => [
+      'tid' => [
+        'description' => 'TaskID. Primary Key',
+        'type' => 'serial',
+        'unsigned' => true,
+        'not null' => true,
+      ],
+      'body' => [
+        'description' => 'Description of the task.',
+        'type' => 'varchar',
+        'length' => 50,
+        'not null' => true,
+      ],
+      'complete' => [
+        'description' => 'Boolean indicating if the task is complete.',
+        'type' => 'int',
+        'size' => 'tiny',
+        'default' => 0,
+      ],
+    ],
+    'primary key' => ['tid'],
+  ];
+
+  return $schema;
+}
