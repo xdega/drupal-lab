@@ -1,4 +1,4 @@
-version: '3'
+version: "3"
 services:
   web:
     build:
@@ -17,9 +17,14 @@ services:
       MYSQL_DATABASE: drupaldb
       MYSQL_ROOT_PASSWORD: root
       MYSQL_USER: drupal
-      MYSQL_PASSWORD: guest 
+      MYSQL_PASSWORD: guest
     ports:
       - "3306:3306"
+  composer:
+    image: composer
+    volumes:
+      - ./src:/var/www/html
+    working_dir: /var/www/html
   pma:
     image: phpmyadmin/phpmyadmin
     environment:
