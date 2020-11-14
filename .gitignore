@@ -1,5 +1,13 @@
-/vendor
+# Local User Settings
 /.editorconfig
 /.gitattributes
+
+# Files Managed by Composer
+/vendor
 web/modules
 web/themes
+
+# Generated Site Content
+web/files/
+web/sites/*/files
+web/sites/*/private
