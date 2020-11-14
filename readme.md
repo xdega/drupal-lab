@@ -18,6 +18,7 @@ Then you can simply run:
 You should wait approx **10 seconds** for the SQL backup script to complete before the website will be accessible.
 
 The website should be running at: **localhost:8080/web**
+
 PHP My Admin is available at: **localhost:8001**
 
 
