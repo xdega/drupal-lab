@@ -1,5 +1,5 @@
 /vendor
 /.editorconfig
 /.gitattributes
-/web/modules
-/web/themes
+web/modules
+web/themes
