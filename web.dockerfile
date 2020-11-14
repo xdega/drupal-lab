@@ -1,5 +1,7 @@
 FROM php:7.3-apache-buster
 
+COPY httpd.conf /etc/httpd/conf/httpd.conf
+
 RUN apt-get update && apt-get install -y --fix-missing \
   apt-utils \
   gnupg
