@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c3934811e73ed585d9b4046b914c16cb",
+    "content-hash": "ca8d5021f56647b93dadc75730a2079e",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1331,42 +1331,6 @@
                 "GPL-2.0-or-later"
             ],
             "description": "A flexible Composer project scaffold builder.",
-            "homepage": "https://www.drupal.org/project/drupal",
-            "keywords": [
-                "drupal"
-            ]
-        },
-        {
-            "name": "drupal/core-project-message",
-            "version": "9.0.7",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/drupal/core-project-message.git",
-                "reference": "fbb9d944f82a1f25ab967a8bc22d3dc19479bd11"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/drupal/core-project-message/zipball/fbb9d944f82a1f25ab967a8bc22d3dc19479bd11",
-                "reference": "fbb9d944f82a1f25ab967a8bc22d3dc19479bd11",
-                "shasum": ""
-            },
-            "require": {
-                "composer-plugin-api": "^1.1 || ^2",
-                "php": ">=7.3.0"
-            },
-            "type": "composer-plugin",
-            "extra": {
-                "class": "Drupal\\Composer\\Plugin\\ProjectMessage\\MessagePlugin"
-            },
-            "autoload": {
-                "psr-4": {
-                    "Drupal\\Composer\\Plugin\\ProjectMessage\\": "."
-                }
-            },
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "description": "Adds a message after Composer installation.",
             "homepage": "https://www.drupal.org/project/drupal",
             "keywords": [
                 "drupal"
