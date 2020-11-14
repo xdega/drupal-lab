@@ -9,7 +9,7 @@ This default provides a good baseline install from which to rapidly try out new 
 You must have Docker installed on the host machine.
 
 While this comes with the required themes and modules installed, you should run `composer install` from the project root. 
-If you don't have composer installed natively (preferred) you may use the Docker image (https://hub.docker.com/_/composer), but this method is not supported.
+If you don't have composer installed natively (preferred) you may use the Docker image (https://hub.docker.com/_/composer) (unsupported)
 
 Then you can simply run:
 
