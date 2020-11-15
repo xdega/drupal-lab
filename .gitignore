@@ -1,5 +1,6 @@
-/vendor
+# Local User Settings
 /.editorconfig
 /.gitattributes
-web/modules
-web/themes
+
+# Files Managed by Composer
+/vendor
