@@ -12,6 +12,10 @@ While this comes with the required themes and modules installed, you should run 
 
 If you don't have composer installed natively (preferred) you may use the Docker image (https://hub.docker.com/_/composer) (unsupported)
 
+You should run the following command on first load, in order to make the default files directory writable: 
+
+`sudo chmod 777 web/sites/default/files/`
+
 Then you can simply run:
 
 `docker-compose up`
