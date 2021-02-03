@@ -1,0 +1,8 @@
+name: "Glider: A TailwindCSS Theme"
+description: "A minimal theme based on TailwindCSS"
+core: 8.x
+core_version_requirement: ^8 || ^9
+type: theme
+base theme: stable
+libraries:
+  - glider/global-styling
