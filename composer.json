@@ -19,7 +19,8 @@
         "drupal/core-composer-scaffold": "^9",
         "drupal/core-recommended": "^9",
         "drupal/devel": "^4.0",
-        "drupal/gin": "^3.0"
+        "drupal/gin": "^3.0",
+        "drupal/tailwindcss": "^4.0@RC"
     },
     "conflict": {
         "drupal/drupal": "*"

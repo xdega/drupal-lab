@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "eeba5f8b1ea6b663ef4e403895abb1e1",
+    "content-hash": "7478fc949f35c77dc42fa6cd3ebcb142",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1674,18 +1674,18 @@
             ]
         },
         {
-            "name": "drupal/olivero",
-            "version": "1.0.0-beta2",
+            "name": "drupal/tailwindcss",
+            "version": "4.0.0-rc1",
             "source": {
                 "type": "git",
-                "url": "https://git.drupalcode.org/project/olivero.git",
-                "reference": "8.x-1.0-beta2"
+                "url": "https://git.drupalcode.org/project/tailwindcss.git",
+                "reference": "4.0.0-rc1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/olivero-8.x-1.0-beta2.zip",
-                "reference": "8.x-1.0-beta2",
-                "shasum": "79b0d74948a33f0322085b58bc1b1992dcf99bb4"
+                "url": "https://ftp.drupal.org/files/projects/tailwindcss-4.0.0-rc1.zip",
+                "reference": "4.0.0-rc1",
+                "shasum": "ce11e176603aab59a19247506e74cdbe71135f95"
             },
             "require": {
                 "drupal/core": "^8 || ^9"
@@ -1693,11 +1693,11 @@
             "type": "drupal-theme",
             "extra": {
                 "drupal": {
-                    "version": "8.x-1.0-beta2",
-                    "datestamp": "1599942309",
+                    "version": "4.0.0-rc1",
+                    "datestamp": "1610793849",
                     "security-coverage": {
                         "status": "not-covered",
-                        "message": "Project has not opted into security advisory coverage!"
+                        "message": "RC releases are not covered by Drupal security advisories."
                     }
                 }
             },
@@ -1707,23 +1707,14 @@
             ],
             "authors": [
                 {
-                    "name": "mherchel",
-                    "homepage": "https://www.drupal.org/user/118428"
-                },
-                {
-                    "name": "mtift",
-                    "homepage": "https://www.drupal.org/user/751908"
-                },
-                {
-                    "name": "proeung",
-                    "homepage": "https://www.drupal.org/user/1785940"
+                    "name": "opdavies",
+                    "homepage": "https://www.drupal.org/user/381388"
                 }
             ],
-            "description": "A clean, modern, and accessible Drupal default theme.",
-            "homepage": "https://www.drupal.org/project/olivero",
+            "description": "A starter kit theme for Drupal 8 and Tailwind CSS.",
+            "homepage": "https://www.drupal.org/project/tailwindcss",
             "support": {
-                "source": "https://git.drupalcode.org/project/olivero",
-                "issues": "https://www.drupal.org/project/issues/olivero"
+                "source": "https://git.drupalcode.org/project/tailwindcss"
             }
         },
         {
@@ -5076,7 +5067,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "drupal/olivero": 10
+        "drupal/tailwindcss": 5
     },
     "prefer-stable": true,
     "prefer-lowest": false,
