@@ -21,11 +21,26 @@ function glider_preprocess_node(&$variables) {
 }
 
 /**
+ * Implements hook_preprocess_menu().
+ */
+function glider_preprocess_menu(&$variables) {
+  dpm($variables);
+  // Modify the menus with TailwindCSS
+}
+
+/**
  * Implements hook_preprocess_links().
  */
 function glider_preprocess_links(&$variables) {
-  //dpm($variables['links']);
-  if (isset($variables['links']['node-readmore'])) {
-    $variables['links']['node-readmore']['link']['#title'] = t('More');
+  $links = $variables['links'];
+
+  $link_classes = [
+    'text-blue-500', 
+    'hover:text-blue-600'
+  ];
+
+  // Add styles to links in the content.
+  foreach ($links as $link) {
+    $link['attributes']['class'] = $link_classes;
   }
 }
