@@ -47,6 +47,31 @@ function glider_preprocess_menu(&$variables) {
 }
 
 /**
+ * Implements hook_preprocess_input().
+ */
+function glider_preprocess_input(&$variables) {
+  $input_classes = [
+    'border-2',
+    'border-gray-300',
+    'p-2',
+    'rounded-tl-md',
+    'rounded-bl-md'
+  ];
+
+  if ($variables['attributes']['type'] == 'search') {
+    // TODO: Hard coding "Search", but may be prudent to use a field like title?
+    $variables['attributes']['placeholder'] = t('Search');
+    $variables['attributes']['class'] = $input_classes;
+  }
+
+  // Ideally this is matched by something other than a string value
+  if ($variables['attributes']['type'] == 'submit' && $variables['attributes']['value'] == 'Search') {
+      // Visually hide the search button, but keep it available for accessibility
+      $variables['attributes']['class'] = "visually-hidden";
+  }
+}
+
+/**
  * Implements hook_preprocess_links().
  */
 function glider_preprocess_links(&$variables) {
